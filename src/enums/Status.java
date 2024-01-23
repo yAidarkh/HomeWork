@@ -15,4 +15,5 @@ public enum Status {
     public String getRusName() {
         return rusName;
     }
+
 }

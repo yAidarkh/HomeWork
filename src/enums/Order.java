@@ -1,7 +1,7 @@
 package enums;
 
 public class Order {
-    private int id;
+
     private User user;
     private Product product;
     private Status status;
@@ -12,20 +12,12 @@ public class Order {
         System.out.println("Status заказа: "+status.getRusName());
     }
 
-    public Order(int id, User user, Product product) {
-        this.id = id;
+    public Order(User user, Product product) {
         this.user = user;
         this.product = product;
         this.status = Status.CREATED;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public User getUser() {
         return user;

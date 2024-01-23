@@ -38,6 +38,9 @@ public class Manager {
             return;
         }
         task.setStatus(newStatus);
+        if(task instanceof Subtask){
+            checkEpicStatus(((Subtask) task).getEpic());
+        }
     }
 
     private int notEmptySubtaskEpic(Epic epic){

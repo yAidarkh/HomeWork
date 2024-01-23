@@ -8,15 +8,15 @@ public class Order {
 
     public void displayOrderInfo(){
         System.out.println("Заказ на пользователя: "+user.getName());
-        System.out.println("Заказно: "+product.getName() + ".\nСтоймостью: "+product.getPrice());
+        System.out.println("Заказно: "+product.getName() + "\nСтоймостью: "+product.getPrice());
         System.out.println("Status заказа: "+status.getRusName());
     }
 
-    public Order(int id, User user, Product product, Status status) {
+    public Order(int id, User user, Product product) {
         this.id = id;
         this.user = user;
         this.product = product;
-        this.status = status;
+        this.status = Status.CREATED;
     }
 
     public int getId() {

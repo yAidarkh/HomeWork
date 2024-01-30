@@ -1,18 +1,18 @@
 package enums.Books;
 
 public enum Status {
-    BORROWED ("Взята"),
-    ARCHIVED("Архив"),
-    AVIABLE("Доступна"),
-    OVERDUED ("Просрочена");
-    private final String rusName;
+    BORROWED (new FromBorrowedStatusMover()),
+    ARCHIVED(new FromArchivedStatusMover()),
+    AVIABLE(new FromAviableStatusMover()),
+    OVERDUED (new FromOverduedStatusMover());
+    private final BookMover bookMover;
 
 
-    Status(String rusName) {
-        this.rusName = rusName;
+    Status(BookMover bookMover) {
+        this.bookMover = bookMover;
     }
 
-    public String getRusName() {
-        return rusName;
+    public BookMover getBookMover() {
+        return bookMover;
     }
 }

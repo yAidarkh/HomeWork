@@ -21,28 +21,11 @@ public class BookMover {
     }
     protected void changeStatus(Book book,Status status){
         Status bookStatusBefore = book.getStatus();
-        BookMover mover = wichBookMover(book.getStatus());
+        BookMover mover = book.getStatus().getBookMover();
         if(mover.bookMover(book,status)){
             System.out.println("Статус книги изменен с "+bookStatusBefore+ " на " +status);
         }else{
             System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
-        }
-
-
-
-    }
-    protected BookMover wichBookMover(Status status){
-        switch (status){
-            case BORROWED:
-                return new FromBorrowedStatusMover();
-            case ARCHIVED:
-                return new FromArchivedStatusMover();
-            case AVIABLE:
-                return new FromAviableStatusMover();
-            case OVERDUED:
-                return new FromOverduedStatusMover();
-            default:
-                return null;
         }
     }
     protected Status wichStatus(int i){
@@ -63,7 +46,7 @@ public class BookMover {
     protected void showStatusList(){
         int count = 1;
         for(Status s:Status.values()){
-            System.out.println(count+". "+s.getRusName());
+            System.out.println(count+". "+s);
             count++;
         }
     }

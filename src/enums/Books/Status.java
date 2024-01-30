@@ -2,8 +2,8 @@ package enums.Books;
 
 public enum Status {
     BORROWED (new FromBorrowedStatusMover()),
-    ARCHIVED(new FromArchivedStatusMover()),
-    AVIABLE(new FromAviableStatusMover()),
+    ARCHIVED (new FromArchivedStatusMover()),
+    AVIABLE (new FromAviableStatusMover()),
     OVERDUED (new FromOverduedStatusMover());
     private final BookMover bookMover;
 

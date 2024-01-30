@@ -14,7 +14,7 @@ public class BookMover {
         while (true){
         int answer = scanner.nextInt();
         if (answer>=1&&answer<=4){
-            changeStatus(book,wichStatus(answer));
+            changeStatus(book,Status.values()[answer-1]);
             return;
         }
         }
@@ -28,21 +28,6 @@ public class BookMover {
             System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
         }
     }
-    protected Status wichStatus(int i){
-        switch (i){
-            case 1:
-                return Status.BORROWED;
-            case 2:
-                return Status.ARCHIVED;
-            case 3:
-                return Status.AVIABLE;
-            case 4:
-                return Status.OVERDUED;
-            default:
-                return null;
-        }
-    }
-
     protected void showStatusList(){
         int count = 1;
         for(Status s:Status.values()){

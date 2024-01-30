@@ -17,46 +17,32 @@ public class BookMover {
             changeStatus(book,wichStatus(answer));
             return;
         }
-
         }
-
-
     }
     protected void changeStatus(Book book,Status status){
         Status bookStatusBefore = book.getStatus();
-        switch (book.getStatus()){
-            case ARCHIVED:
-                FromArchivedStatusMover archivedMover = new FromArchivedStatusMover();
-                if(archivedMover.bookMover(book,status)){
-                    System.out.println("Статус книги изменен с "+bookStatusBefore+ " на " +status);
-                    break;
-                }
-                System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
-                break;
+        BookMover mover = wichBookMover(book.getStatus());
+        if(mover.bookMover(book,status)){
+            System.out.println("Статус книги изменен с "+bookStatusBefore+ " на " +status);
+        }else{
+            System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
+        }
+
+
+
+    }
+    protected BookMover wichBookMover(Status status){
+        switch (status){
             case BORROWED:
-                FromBorrowedStatusMover borrowedStatusMover = new FromBorrowedStatusMover();
-                if(borrowedStatusMover.bookMover(book,status)){
-                    System.out.println("Статус книги изменен с "+bookStatusBefore+ " на " +status);
-                    break;
-                }
-                System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
-                break;
+                return new FromBorrowedStatusMover();
+            case ARCHIVED:
+                return new FromArchivedStatusMover();
             case AVIABLE:
-                FromAviableStatusMover aviableStatusMover = new FromAviableStatusMover();
-                if(aviableStatusMover.bookMover(book,status)){
-                    System.out.println("Статус книги изменен с "+bookStatusBefore+ " на " +status);
-                    break;
-                }
-                System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
-                break;
+                return new FromAviableStatusMover();
             case OVERDUED:
-                FromOverduedStatusMover overduedStatusMover = new FromOverduedStatusMover();
-                if(overduedStatusMover.bookMover(book,status)){
-                    System.out.println("Статус книги изменен с "+bookStatusBefore+ " на " +status);
-                    break;
-                }
-                System.out.println("Перевод книги из статуса "+bookStatusBefore+" в статус "+status+" невозможен");
-                break;
+                return new FromOverduedStatusMover();
+            default:
+                return null;
         }
     }
     protected Status wichStatus(int i){

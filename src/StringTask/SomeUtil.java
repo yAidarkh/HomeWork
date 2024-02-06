@@ -1,3 +1,5 @@
+package StringTask;
+
 import java.util.Arrays;
 
 public class SomeUtil {

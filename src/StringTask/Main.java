@@ -1,3 +1,5 @@
+package StringTask;
+
 public class Main {
     public static void main(String[] args) {
         Valid valid = new Valid();

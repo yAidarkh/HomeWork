@@ -1,3 +1,5 @@
+package StringTask;
+
 public class Valid {
     public boolean validPassword(String password) {
         if(password.length()>=8){

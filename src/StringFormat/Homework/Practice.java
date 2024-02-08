@@ -1,5 +1,7 @@
 package StringFormat.Homework;
 
+import HomeWork0401.Database;
+
 public class Practice {
     public static void main(String[] args) {
         Category[] categories = {
@@ -31,5 +33,29 @@ public class Practice {
 
         }
         System.out.printf("%-30s%-30s%-7d\n","Итого"," ",n);
+        System.out.println("");
+        String pizza = "Пицца, 1 шт., 310.50";
+        String tea = "Чай, 1 шт., 113.30";
+        String cookies = "Печенье, 1 шт., 75.75";
+        String[] ordeers = {pizza,tea,cookies};
+        double count = 0;
+        for (String ordeer : ordeers) {
+            int last = 0;
+            for (int i = 0; i < ordeer.length(); i++) {
+                if(i==ordeer.length()-1){
+                    String partOrdeer = ordeer.substring(last);
+                    System.out.printf("%s",partOrdeer.trim());
+                    count+= Double.parseDouble(partOrdeer.trim());
+                }else if (ordeer.charAt(i)==','){
+                    String partOrdeer = ordeer.substring(last,i);
+                    System.out.printf("%-8s",partOrdeer.trim());
+                    last = i+1;
+                }
+
+            }
+            System.out.println("");
+
+        }
+        System.out.printf("%-16s%.2f\n","Итого",count);
     }
 }

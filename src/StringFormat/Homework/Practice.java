@@ -18,15 +18,26 @@ public class Practice {
                         new Product("Marshall Major IV", 89_990),
                 }),
         };
+        int maxLengtCategoreName = 0;
+        for (Category category : categories) {
+            maxLengtCategoreName = category.getName().length()>maxLengtCategoreName?category.getName().length():maxLengtCategoreName;
+        }
+        int maxLengProductName =0;
+        for (Category category : categories) {
+            for (Product product : category.getProducts()) {
+                maxLengProductName = product.getName().length()>maxLengProductName?product.getName().length():maxLengProductName;
+            }
+        }
+        int number2 = maxLengProductName + maxLengtCategoreName;
         int n= 0;
         for (Category category : categories) {
             boolean firstProduct = true;
             for (Product product : category.getProducts()) {
                 if (firstProduct) {
-                    System.out.printf("%-30s%-30s%-7d\n", category.getName(), product.getName(), product.getPrice());
+                    System.out.printf("%-"+(maxLengtCategoreName+1)+"s%s%-"+(number2+1)+"d\n", category.getName(), product.getName(), product.getPrice());
                     firstProduct = false;
                 } else {
-                    System.out.printf("%30s%-30s%-6d\n","",product.getName(), product.getPrice());
+                    System.out.printf("%"+(maxLengtCategoreName+1)+"s%s%-"+(number2+1)+"d\n","",product.getName(), product.getPrice());
                 }
                 n += product.getPrice();
             }

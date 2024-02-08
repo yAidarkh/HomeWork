@@ -31,6 +31,7 @@ public class Garage {
                 count++;
             }
         }
+        System.out.println();
     }
     public void getGrageList(){
         int count =1;
@@ -38,6 +39,7 @@ public class Garage {
             System.out.printf("%d. %s - %s\n", count,transport.getName(),transport.getTransportType());
             count++;
         }
+        System.out.println();
     }
 
 }

@@ -2,15 +2,15 @@ package Abstract;
 
 public abstract class Transport {
     private String name;
-    private String transportType;
+    private TransportType transportType;
     private int wheelCount;
     private int speed;
 
-    public Transport(String name, String transportType, int wheelCount, int speed) {
+    public Transport(String name, int speed) {
         this.name = name;
-        this.transportType = transportType;
-        this.wheelCount = wheelCount;
         this.speed = speed;
+        this.transportType = TransportType.TRANSPORT;
+        this.wheelCount = TransportType.TRANSPORT.getWheelCount() ;
     }
 
     public String getName() {
@@ -21,13 +21,10 @@ public abstract class Transport {
         this.name = name;
     }
 
-    public String getTransportType() {
+    public TransportType getTransportType() {
         return transportType;
     }
 
-    public void setTransportType(String transportType) {
-        this.transportType = transportType;
-    }
 
     public int getWheelCount() {
         return wheelCount;

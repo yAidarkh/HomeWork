@@ -1,8 +1,16 @@
 package Abstract;
 
 public class Motocycle extends Transport{
-    public Motocycle(String name, String transportType, int wheelCount, int speed) {
-        super(name, transportType, wheelCount, speed);
+    private TransportType transportType;
+    private TransportType wheelCount;
+    public Motocycle(String name, int speed) {
+        super(name, speed);
+        this.wheelCount= TransportType.MOTOCYCLE;
+        this.transportType = TransportType.MOTOCYCLE;
     }
 
+    @Override
+    public TransportType getTransportType() {
+        return transportType;
+    }
 }

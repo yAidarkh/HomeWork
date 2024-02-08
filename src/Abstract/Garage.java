@@ -26,8 +26,8 @@ public class Garage {
     public void showAllTransportOneType(String type){
         int count =1;
         for (Transport transport1 : transports) {
-            if (transport1.getTransportType().equals(type)){
-                System.out.printf("%d. %s - %s\n", count,transport1.getName(),transport1.getTransportType());
+            if ((null != transport1) && (transport1.getTransportType().getType().equals(type))){
+                System.out.printf("%d. %s - %s\n", count,transport1.getName(),transport1.getTransportType().getType());
                 count++;
             }
         }
@@ -36,8 +36,10 @@ public class Garage {
     public void getGrageList(){
         int count =1;
         for (Transport transport : transports) {
-            System.out.printf("%d. %s - %s\n", count,transport.getName(),transport.getTransportType());
-            count++;
+            if(transport!=null) {
+                System.out.printf("%d. %s - %s\n", count, transport.getName(), transport.getTransportType().getType());
+                count++;
+            }
         }
         System.out.println();
     }

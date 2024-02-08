@@ -1,7 +1,17 @@
 package Abstract;
 
 public class Boat extends Transport{
-    public Boat(String name, String transportType, int wheelCount, int speed) {
-        super(name, transportType, wheelCount, speed);
+    private TransportType transportType;
+    private TransportType wheelCount;
+    public Boat(String name, int speed) {
+        super(name, speed);
+        this.transportType = TransportType.BOAT;
+        this.wheelCount= TransportType.BOAT;
+    }
+
+    @Override
+    public TransportType getTransportType() {
+        return transportType;
     }
 }
+

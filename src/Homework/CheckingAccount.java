@@ -1,7 +1,7 @@
 package Homework;
 
 public class CheckingAccount extends Account {
-    private int balance;
+
 
     @Override
     public void pay(int amount) {
@@ -30,14 +30,7 @@ public class CheckingAccount extends Account {
         System.out.printf("Успешно пополнено. Ваш баланс: %d \n", this.getBalance());
     }
 
-    @Override
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
 
-    public int getBalance() {
-        return balance;
-    }
 
     public CheckingAccount(int balance1) {
         this.balance = balance1;

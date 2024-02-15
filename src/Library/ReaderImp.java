@@ -14,6 +14,7 @@ public class ReaderImp implements Reader {
     public void returnBook(Book book, Library library, AdministratorImp administratorImp) {
         if (administratorImp.takeBook(book, library)) {
             this.setBorrowedBook(null);
+            this.setDays(0);
         }
     }
 

@@ -10,10 +10,12 @@ public class Main {
 //        }catch (RuntimeException e){
 //            System.out.println(e.getMessage());
 //        }
+        System.out.print("Введите целое число => ");
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
+        final String inputValue = scanner.next();
         IntegerParser integerParser = new IntegerParser();
-        integerParser.parseInt(s);
+        final int parsedValue = integerParser.parseInt(inputValue);
+        System.out.println(parsedValue);
 
     }
 }

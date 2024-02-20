@@ -12,7 +12,7 @@ public class ValidPassword {
                     }
                 }
             }
-        }
-        throw new RuntimeException("Пароль не подходит.");
+        }else {
+        throw new RuntimeException("Пароль не подходит.");}
     }
 }

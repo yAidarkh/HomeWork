@@ -8,9 +8,9 @@ public class Main {
         library.addBook(new Book("3",1,1,18));
         library.addBook(new Book("4",1,1,30));
         Reader reader = new Reader(18);
-        reader.takeBook(library.findBook("3"),library);
+        library.giveBook(library.findBook("3"),reader);
         Reader reader1 = new Reader(72);
-        reader1.takeBook(library.findBook("3"),library);
+        library.giveBook(library.findBook("3"),reader1);
 
     }
 }

@@ -19,7 +19,8 @@ public class Library {
         }
     }
 
-    public void giveBook(int bookIndex, Reader reader) {
+    public void giveBook(String title, Reader reader) {
+        int bookIndex = findBook(title);
         Book book = books[bookIndex];
         if (book.getQuantity() <= 0) {
             throw new RuntimeException("Такой книги нету, закончились.");
@@ -38,7 +39,8 @@ public class Library {
                 return i;
             }
         }
-        return -1;
+        throw new RuntimeException("Книга не найдена.");
+
     }
 
     public Book[] getBooks() {

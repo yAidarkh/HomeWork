@@ -3,27 +3,36 @@ package Exception;
 
 public class IntegerParser{
     public int parseInt(String s){
-        if (s.equals("")){
+        if (s.equals("")) {
             throw new EmptyStringException("Введена пустая строка.");
+        }else if(!isDigitString(s)){
+            throw new StringNotNumberException("Вы ввели не целое число.");
+        }else if (isToSmallNumber(s)){
+            throw new StringIsTooBigNumberException("Введённое число слишком маленькое.");
         }else if (s.length()>10){
             throw new StringIsTooBigNumberException("Введённое число слишком большое.");
-
         }
-
         Integer a = Integer.parseInt(s);
         return a;
+    }
 
-//        try {
-//
-//        }catch (NullPointerException | EmptyStringException e){
-//            System.out.println("Введена пустая строка.");
-//        }catch (StringNotNumberException e){
-//            System.out.println("Вы ввели не целое число.");
-//        }catch (StringIsTooBigNumberException e){
-//            System.out.println("Введённое число слишком большое.");
-//        }catch (StringIsTooSmallNumberException e){
-//            System.out.println("Введённое число слишком маленькое.");
-//        }
+    static boolean isToSmallNumber(String s){
+        if(s.charAt(0)=='-'&&s.length()>11){
+            return true;
+        }
+        return false;
+    }
+
+    static boolean isDigitString(String s){
+        if(!(Character.isDigit(s.charAt(0)))||s.charAt(0)!='-') {
+            return false;
+        }
+        for (int i = 1; i < s.length(); i++) {
+            if(!Character.isDigit(s.charAt(i))){
+                return false;
+            }
+        }
+        return true;
     }
 
     public class EmptyStringException extends RuntimeException{

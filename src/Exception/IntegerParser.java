@@ -8,7 +8,7 @@ public class IntegerParser{
         }else if(!isDigitString(s)){
             throw new StringNotNumberException("Вы ввели не целое число.");
         }else if (isToSmallNumber(s)){
-            throw new StringIsTooBigNumberException("Введённое число слишком маленькое.");
+            throw new StringIsTooSmallNumberException("Введённое число слишком маленькое.");
         }else if (s.length()>10){
             throw new StringIsTooBigNumberException("Введённое число слишком большое.");
         }

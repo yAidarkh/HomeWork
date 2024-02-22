@@ -3,7 +3,7 @@ package Exception;
 
 public class IntegerParser{
     public int parseInt(String s){
-        if (s.equals("")) {
+        if (s.isBlank()) {
             throw new EmptyStringException("Введена пустая строка.");
         }else if(!isDigitString(s)){
             throw new StringNotNumberException("Вы ввели не целое число.");

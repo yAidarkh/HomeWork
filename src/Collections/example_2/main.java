@@ -8,14 +8,15 @@ public class main {
     public static void main(String[] args) {
         List<String> tasks = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        while (true){
-            System.out.println("Выберите действие:\n"+
-            "1. Добавить задачу\n"+
-            "2. Вывести список задач\n"+
-            "3. Удалить задачу\n"+
-            "0. Выход");
+        while (true) {
+            System.out.println("""
+                    Выберите действие:
+                    1. Добавить задачу
+                    2. Вывести список задач
+                    3. Удалить задачу
+                    0. Выход""");
             int answer = scanner.nextInt();
-            switch (answer){
+            switch (answer) {
                 case 1:
                     System.out.println("Введите задачу для планирования: ");
                     String newTask = scanner.next();
@@ -24,17 +25,15 @@ public class main {
                 case 2:
                     System.out.println("Список запланированных дел: ");
                     for (int i = 0; i < tasks.size(); i++) {
-                        if(tasks.get(i)!=null) {
-                            System.out.printf("%d. %s.\n", i + 1, tasks.get(i));
-                        }
+                        System.out.printf("%d. %s.\n", i + 1, tasks.get(i));
                     }
                     break;
                 case 3:
                     System.out.println("Введите идекс задачи для удаления: ");
                     int indexForDelete = scanner.nextInt();
-                    if(indexForDelete>0&&indexForDelete<tasks.size()+1){
-                        String removedTask = tasks.remove(indexForDelete-1);
-                        System.out.printf("Задача: \"%s\" удалена.",removedTask);
+                    if (indexForDelete > 0 && indexForDelete <= tasks.size()) {
+                        String removedTask = tasks.remove(indexForDelete - 1);
+                        System.out.printf("Задача: \"%s\" удалена.", removedTask);
                         break;
                     }
                     System.out.println("Задача не найдена.");

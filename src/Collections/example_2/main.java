@@ -32,12 +32,17 @@ public class main {
                 case 3:
                     System.out.println("Введите идекс задачи для удаления: ");
                     int indexForDelete = scanner.nextInt();
-                    System.out.printf("Задача: \"%s\" удалена.",tasks.remove(indexForDelete-1));
+                    if(indexForDelete>0&&indexForDelete<tasks.size()+1){
+                        String removedTask = tasks.remove(indexForDelete-1);
+                        System.out.printf("Задача: \"%s\" удалена.",removedTask);
+                        break;
+                    }
+                    System.out.println("Задача не найдена.");
+                    break;
+                case 0:
+                    return;
+            }
 
-            }
-            if (answer==0){
-                break;
-            }
         }
     }
 }

@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
+    private String name;
     private List<Product> productList = new ArrayList<>();
 
-    public Category(List<Product> productList) {
+    public Category(String name, List<Product> productList) {
+        this.name = name;
         this.productList = productList;
     }
 
     public Product findMaxPriceProduct() {
-        Product productWithMaxPrice = new Product("", 0);
+        Product productWithMaxPrice = new Product("", 0, null);
         for (Product product : productList) {
             if (product.getPrice() > productWithMaxPrice.getPrice()) {
                 productWithMaxPrice = product;
@@ -59,5 +61,11 @@ public class Category {
         this.productList = productList;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

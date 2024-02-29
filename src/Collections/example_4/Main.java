@@ -21,12 +21,13 @@ public class Main {
         phoneList.add(new Product("Apple Iphone", 200_000));
         phoneList.add(new Product("Nokia", 15_000));
 
+        ArrayList<Product> findedProductsList = new ArrayList<>();
         for (Category category : categories) {
             System.out.println(category.findMaxPriceProduct());
             category.sumPriceProducts();
             category.calculateAverage();
-            System.out.println(category.findProduct("APPLE"));
+            category.findProduct("APPLE", findedProductsList);
         }
-
+        System.out.println(findedProductsList);
     }
 }

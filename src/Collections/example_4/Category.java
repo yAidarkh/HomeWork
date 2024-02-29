@@ -42,8 +42,7 @@ public class Category {
         return (double) sum / productList.size();
     }
 
-    public List<Product> findProduct(String name) {
-        List<Product> findedProducts = new ArrayList<>();
+    public List<Product> findProduct(String name, ArrayList<Product> findedProducts) {
         for (Product product : productList) {
             if (product.getName().toLowerCase().contains(name.toLowerCase())) {
                 findedProducts.add(product);

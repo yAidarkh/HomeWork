@@ -21,7 +21,7 @@ public class Main {
         phoneList.add(new Product("Apple Iphone", 200_000));
         phoneList.add(new Product("Nokia", 15_000));
 
-        for (Category category:categories){
+        for (Category category : categories) {
             System.out.println(category.findMaxPriceProduct());
             category.sumPriceProducts();
             category.calculateAverage();

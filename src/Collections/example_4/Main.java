@@ -13,15 +13,17 @@ public class Main {
 
         int sumProductPrice = 0;
         int maxProductPrice = 0;
-        for (Product product:products){
+        String maxProductPriceName = "";
+        for (Product product : products) {
             System.out.println(product);
-            if (product.getPrice()>maxProductPrice){
-                maxProductPrice=product.getPrice();
+            if (product.getPrice() > maxProductPrice) {
+                maxProductPrice = product.getPrice();
+                maxProductPriceName = product.getName();
             }
-            sumProductPrice+=product.getPrice();
+            sumProductPrice += product.getPrice();
         }
-        System.out.printf("Средняя цена на товары %s\n",sumProductPrice/products.size());
-        System.out.printf("Максимальная цена товара %d\n",maxProductPrice);
+        System.out.printf("Средняя цена на товары %s\n", sumProductPrice / products.size());
+        System.out.printf("Максимальная цена товара %d, %s\n", maxProductPrice, maxProductPriceName);
 
     }
 }

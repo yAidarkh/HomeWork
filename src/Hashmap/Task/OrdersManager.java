@@ -103,4 +103,13 @@ public class OrdersManager {
             System.out.println("Клиента " + name + " больше нет в таблице.");
         }
     }
+    List<String> getTopCustomersByOrderCount(int topN){
+        List<String> topCusometsByOrderCount = new ArrayList<>();
+        for (Map.Entry<String, ArrayList<Double>> entry : customersOrders.entrySet()) {
+            if(entry.getValue().size()>topN){
+                topCusometsByOrderCount.add(entry.getKey());
+            }
+        }
+        return topCusometsByOrderCount;
+    }
 }

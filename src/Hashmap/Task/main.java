@@ -12,5 +12,6 @@ public class main {
         ordersManager.printCustomerOrders(maxOrderCustomerName);
 
         ordersManager.removeUnprofitableOrders();
+        System.out.println(ordersManager.getTopCustomersByOrderCount(3));
     }
 }

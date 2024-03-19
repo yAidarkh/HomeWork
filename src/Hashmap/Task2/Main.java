@@ -42,13 +42,13 @@ public class Main {
             double imdb = 0.0;
             double kinopoisk = 0.0;
             for (Map.Entry<String, Double> entry1 : entry.getValue().entrySet()) {
-                if (entry1.getKey() == "IMDb") {
+                if (entry1.getKey().equals("IMDb")) {
                     imdb = entry1.getValue();
                     if(entry1.getValue() > maxValueIMDb){
                     maxValueIMDbName = entry.getKey();
                     maxValueIMDb = entry1.getValue();
                     }
-                } else if (entry1.getKey() == "Kinopoisk") {
+                } else if (entry1.getKey().equals("Kinopoisk")) {
                     kinopoisk = entry1.getValue();
                     if(entry1.getValue() > maxValueKinopoisk){
                     maxValueKinopoiskName = entry.getKey();

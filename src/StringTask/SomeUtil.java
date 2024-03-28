@@ -1,6 +1,8 @@
 package StringTask;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SomeUtil {
     public void countConsonantsChar(String words) {
@@ -82,6 +84,21 @@ public class SomeUtil {
             }
         }
     }
+    public Map<Character, Integer> countAllChar2(String sentence) {
+        Map<Character, Integer> answer = new HashMap<>();
+        for (int i = 0; i < sentence.length(); i++) {
+            int count = 0;
+            if (!answer.containsKey(sentence.charAt(i))&&sentence.charAt(i)!=' ') {
+                for (int j = 0; j < sentence.length(); j++) {
+                    if (sentence.charAt(i) == sentence.charAt(j)) {
+                        count++;
+                    }
+                }
+                answer.put(sentence.charAt(i),count);
+            }
+        }
+        return answer;
+    }
     public void sentenceToSnakeSentence(String sentence){
         sentence=sentence.trim();
         String result = "";
@@ -113,3 +130,5 @@ public class SomeUtil {
         return false;
     }
 }
+
+

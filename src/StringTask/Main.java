@@ -16,6 +16,7 @@ public class Main {
         System.out.println(someUtil.findLongestWord(text));
         String text2 = "Программирование на Java";
         someUtil.countAllChar(text2);
+        System.out.println(someUtil.countAllChar2(text2));
         String phrase = "Пример строки для конвертации";
         someUtil.sentenceToSnakeSentence(phrase);
     }

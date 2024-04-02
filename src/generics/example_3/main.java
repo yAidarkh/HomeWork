@@ -14,7 +14,7 @@ public class main {
         Box<String, Cabbage> cabbageBox = new Box<>("cabbage", new Cabbage());
         cabbageBox.getObj().printClass();
 
-        Box<String,Fruit> vegetableBox = new Box<>("vegetable", new Cabbage());
+        Box<String, Vegetable> vegetableBox = new Box<>("vegetable", new Cabbage());
         vegetableBox.getObj().printClass();
     }
 }

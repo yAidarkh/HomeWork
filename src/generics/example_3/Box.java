@@ -1,6 +1,6 @@
 package generics.example_3;
 
-class Box<K, T extends Fruit> {
+class Box<K, T extends Entity> {
     // Реализация класса коробки из предыдущего задания
     private K key;
     private T obj;

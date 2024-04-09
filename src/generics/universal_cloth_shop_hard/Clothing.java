@@ -2,7 +2,7 @@ package generics.universal_cloth_shop_hard;
 
 import java.util.List;
 
-public abstract class Clothing implements Comparable<generics.universal_cloth_shop.Clothing> {
+public abstract class Clothing implements Comparable<Clothing> {
     private String name;
     private double price;
     private String comparableField;
@@ -53,7 +53,7 @@ public abstract class Clothing implements Comparable<generics.universal_cloth_sh
     }
 
     @Override
-    public int compareTo(generics.universal_cloth_shop.Clothing other) {
+    public int compareTo(Clothing other) {
         switch (comparableField) {
             case "price":
                 return Double.compare(this.price, other.getPrice());

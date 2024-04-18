@@ -56,8 +56,10 @@ public class Util {
                 System.out.println("До дня рождения " + friend.getName() + " осталось " +
                         ((birthday.isAfter(now) || birthday.isEqual(now)) ?
                                 ChronoUnit.DAYS.between(now, birthday) :
-                                ChronoUnit.DAYS.between(now, birthday.plusYears(1))
-                                        + " дней."));
+                                ChronoUnit.DAYS.between(now, birthday.plusYears(1)))
+                                        + " дней. Исполниться: " +
+                                        ((birthday.isAfter(now) || birthday.isEqual(now)) ? now.getYear() - friend.getBirthday().getYear() :
+                                                now.getYear() - friend.getBirthday().getYear() + 1 ));
             }
         }
     }

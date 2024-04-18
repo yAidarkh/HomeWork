@@ -60,6 +60,8 @@ public class Util {
                                         + " дней. Исполниться: " +
                                         ((birthday.isAfter(now) || birthday.isEqual(now)) ? now.getYear() - friend.getBirthday().getYear() :
                                                 now.getYear() - friend.getBirthday().getYear() + 1 ));
+            }else {
+                System.out.println("Друг не найден.");
             }
         }
     }

@@ -22,8 +22,8 @@ public class Main {
         fileWriterJson.write("[\n");
         for (User user : users) {
             FileWriter fileWriterUser = new FileWriter("src/StreamData/HomeWork/resources/user"+temp+".json");
-            fileWriterUser.write("{\"name\": \"%s\", \"age\": %d}\n".formatted(user.name,user.age));
-            fileWriterJson.write("{\"name\": \"%s\", \"age\": %d}".formatted(user.name,user.age));
+            fileWriterUser.write("{\n   \"name\": \"%s\",\n   \"age\": %d\n}\n".formatted(user.name,user.age));
+            fileWriterJson.write("{\n   \"name\": \"%s\",\n   \"age\": %d\n}".formatted(user.name,user.age));
             fileWriterJson.write(temp == users.size()? "\n":",\n");
             fileWriterCsv.write("%s, %d\n".formatted(user.name,user.age));
             fileWriterUser.close();

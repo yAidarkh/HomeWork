@@ -19,16 +19,19 @@ public class Main {
 
         fileWriterCsv.write("name, age\n");
         int temp = 1;
+        fileWriterJson.write("[\n");
         for (User user : users) {
             FileWriter fileWriterUser = new FileWriter("src/StreamData/HomeWork/resources/user"+temp+".json");
             fileWriterUser.write("{\"name\": \"%s\", \"age\": %d}\n".formatted(user.name,user.age));
-            fileWriterJson.write("{\"name\": \"%s\", \"age\": %d}\n".formatted(user.name,user.age));
+            fileWriterJson.write("{\"name\": \"%s\", \"age\": %d}".formatted(user.name,user.age));
+            fileWriterJson.write(temp == users.size()? "\n":",\n");
             fileWriterCsv.write("%s, %d\n".formatted(user.name,user.age));
             fileWriterUser.close();
             temp++;
         }
-            fileWriterJson.close();
-            fileWriterCsv.close();
+        fileWriterJson.write(']');
+        fileWriterJson.close();
+        fileWriterCsv.close();
 
         // user.json
         // {"name": "User 1", "age": 29}

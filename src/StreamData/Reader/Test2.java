@@ -28,6 +28,7 @@ public class Test2 {
         for (Country europeCountry : europeCountries) {
             System.out.println(europeCountry);
         }
+        reader.close();
 
     }
     record Country(String code, String name, String continent, String region, Double surfaceArea, Integer indepYear, Integer population, Double lifeExpectancy, Double gnp, Double gnpOld, String localName, String govermentForm, String headOfState, String capital) {

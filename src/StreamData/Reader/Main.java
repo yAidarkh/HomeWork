@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Reader reader = new FileReader("src/StreamData/Reader/recources/result.txt");
+        Reader reader = new FileReader("ws");
         HashMap<String, Integer> map = new HashMap<>();
         BufferedReader br = new BufferedReader(reader);
         while (br.ready()){
@@ -20,6 +20,7 @@ public class Main {
                 map.put(temp, 1);
             }
         }
+        reader.close();
         toStringMap(map);
     }
     static void toStringMap(HashMap<String,Integer> map){

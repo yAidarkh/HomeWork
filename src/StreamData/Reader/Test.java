@@ -22,6 +22,7 @@ public class Test {
             Product product = new Product(id, name, price);
             products.add(product);
         }
+        reader.close();
 
         products.sort((p1, p2) -> p1.price - p2.price);
         System.out.println("Самый дешевый продукт: ");

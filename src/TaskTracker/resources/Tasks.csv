@@ -1,0 +1,5 @@
+id,title,description,type,status,start_time,duration,epic_id
+1,task1,someDescription,TASK,NEW,2024-05-14T09:11:42.539951200,PT24H
+4,task2,someDescription,TASK,NEW,2024-05-14T09:14:32.117753800,PT24H
+2,avx,someDescription,EPIC,NEW,2024-05-14T09:03:07.899877,PT24H
+3,task1,someDescription,SUBTASK,NEW,2024-05-14T09:03:07.899877,PT24H,2
